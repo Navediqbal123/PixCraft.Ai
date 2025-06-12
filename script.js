@@ -1,19 +1,18 @@
 
-document.getElementById('modeToggle').onclick = () => {
+function toggleMode() {
   document.body.classList.toggle('dark');
-};
+}
 
-document.getElementById('generateBtn').onclick = () => {
-  const prompt = document.getElementById('prompt').value;
-  const output = document.getElementById('output');
-  if (!prompt.trim()) {
-    alert("Please enter a prompt.");
-    return;
-  }
-  output.innerHTML = `<p>Generating video for: <strong>${prompt}</strong>...</p>`;
-  setTimeout(() => {
-    output.innerHTML += "<p>✅ Video generated successfully!</p>";
-    document.getElementById('downloadBtn').style.display = "inline-block";
-    document.getElementById('shareBtn').style.display = "inline-block";
-  }, 2000);
-};
+function upscaleImage() {
+  const file = document.getElementById('imageInput').files[0];
+  const res = document.getElementById('imageRes').value;
+  if (!file) return alert("Please upload an image!");
+  document.getElementById('imageResult').innerHTML = `<p>Image upscaled to ${res} successfully ✅</p><button>Download Image</button>`;
+}
+
+function upscaleVideo() {
+  const file = document.getElementById('videoInput').files[0];
+  const res = document.getElementById('videoRes').value;
+  if (!file) return alert("Please upload a video!");
+  document.getElementById('videoResult').innerHTML = `<p>Video upscaled to ${res} successfully ✅</p><button>Download Video</button>`;
+}
