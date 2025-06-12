@@ -1,1 +1,107 @@
-<!DOCTYPE html><html><head><title>PixCraft</title></head><body><h1>Welcome to PixCraft!</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixCraft</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #00ffe1;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: #1e1e1e;
+            border: 2px solid #00ffe1;
+            color: #00ffe1;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #00ffe1;
+            color: #121212;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #bbbbbb;
+            border-top: 1px solid #444;
+            width: 100%;
+        }
+        .contact {
+            margin-top: 30px;
+            border: 1px solid #00ffe1;
+            padding: 20px;
+            border-radius: 12px;
+            background: #1e1e1e;
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PixCraft</h1>
+        <p>Create, Share, and Save with Style!</p>
+    </header>
+
+    <div class="buttons">
+        <button class="btn" onclick="downloadImage()">Download</button>
+        <button class="btn" onclick="shareApp()">Share</button>
+    </div>
+
+    <div class="contact">
+        <h3>Contact Us</h3>
+        <p><strong>WhatsApp:</strong> +918191971463</p>
+        <p><strong>Email:</strong> navedahmad9012@gmail.com</p>
+    </div>
+
+    <footer>
+        &copy; 2025 PixCraft. All rights reserved.
+    </footer>
+
+    <script>
+        function downloadImage() {
+            alert('Download feature coming soon!');
+        }
+        function shareApp() {
+            const text = 'Check out PixCraft - Create, Share, and Save with Style!';
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'PixCraft',
+                    text: text,
+                    url: url,
+                });
+            } else {
+                window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n' + url));
+            }
+        }
+    </script>
+</body>
+</html>
