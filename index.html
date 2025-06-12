@@ -1,26 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PixCraft.AI</title>
+  <title>Upscale Hub - Image & Video</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>PixCraft.AI</h1>
-    <button id="modeToggle">🌙</button>
-  </header>
-  <main>
-    <textarea id="prompt" placeholder="Enter your video prompt here..."></textarea>
-    <button id="generateBtn">🎥 Generate Video</button>
-    <div id="output"></div>
-    <button id="downloadBtn" style="display:none;">⬇️ Download</button>
-    <button id="shareBtn" style="display:none;">🔗 Share</button>
-  </main>
-  <footer>
-    <p>Contact: navedahmad9012@gmail.com | WhatsApp: +91 8191971463</p>
-  </footer>
+  <div class="container">
+    <h1>Upscale Hub</h1>
+    <button onclick="toggleMode()">🌗 Toggle Mode</button>
+
+    <div class="section">
+      <h2>Image Upscale</h2>
+      <input type="file" id="imageInput" accept="image/*" />
+      <select id="imageRes">
+        <option value="1080p">1080p</option>
+        <option value="2k">2K</option>
+        <option value="4k">4K</option>
+      </select>
+      <button onclick="upscaleImage()">Upscale Image</button>
+      <div id="imageResult"></div>
+    </div>
+
+    <div class="section">
+      <h2>Video Upscale</h2>
+      <input type="file" id="videoInput" accept="video/*" />
+      <select id="videoRes">
+        <option value="1080p">1080p</option>
+        <option value="2k">2K</option>
+        <option value="4k">4K</option>
+      </select>
+      <button onclick="upscaleVideo()">Upscale Video</button>
+      <div id="videoResult"></div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
